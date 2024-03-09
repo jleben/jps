@@ -15,6 +15,9 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/rela)
 
 find_package(Torch REQUIRED)
 
+include_directories(/root/miniconda3/envs/bridge/include)
+link_directories(/root/miniconda3/envs/bridge/lib)
+
 add_library(bridge_cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/cpp/auction.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/cpp/bid.cc
@@ -30,7 +33,10 @@ add_library(bridge_cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/cpp/score.cc
 )
 
-target_include_directories(bridge_cpp PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cpp)
+target_include_directories(bridge_cpp PUBLIC
+  ${CMAKE_CURRENT_SOURCE_DIR}/cpp
+  ${SQLITE3_INCLUDE_DIRS}
+)
 target_link_libraries(bridge_cpp PUBLIC _rela ${SQLITE3_LIBRARIES} sqlite3)
 
 pybind11_add_module(bridge
@@ -51,6 +57,7 @@ target_link_libraries(bridge PUBLIC bridge_cpp ${SQLITE3_LIBRARIES} sqlite3)
 target_include_directories(bridge PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/third_party/json/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/spdlog/include
   ${SQLITE3_INCLUDE_DIRS}
 )
 
