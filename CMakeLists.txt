@@ -35,7 +35,6 @@ add_library(bridge_cpp
 
 target_include_directories(bridge_cpp PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/spdlog/include
   ${SQLITE3_INCLUDE_DIRS}
 )
 target_link_libraries(bridge_cpp PUBLIC _rela ${SQLITE3_LIBRARIES} sqlite3)
@@ -58,7 +57,6 @@ target_link_libraries(bridge PUBLIC bridge_cpp ${SQLITE3_LIBRARIES} sqlite3)
 target_include_directories(bridge PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/third_party/json/include
-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/spdlog/include
   ${SQLITE3_INCLUDE_DIRS}
 )
 

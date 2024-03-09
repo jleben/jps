@@ -6,7 +6,6 @@ _openmp_mutex=4.5=2_gnu
 binutils_impl_linux-64=2.40=hf600244_0
 bzip2=1.0.8=hd590300_5
 ca-certificates=2023.7.22=hbcca054_0
-cudatoolkit=11.0.3=h7761cd4_12
 gcc=12.1.0=h9ea6d83_10
 gcc_impl_linux-64=12.1.0=hea43390_17
 kernel-headers_linux-64=2.6.32=he073ed8_16
@@ -27,6 +26,7 @@ pip=23.3.1=pyhd8ed1ab_0
 python=3.8.18=hd12c33a_0_cpython
 readline=8.2=h8228510_1
 setuptools=68.2.2=pyhd8ed1ab_0
+spdlog=1.12.0=hd2e6256_2
 sysroot_linux-64=2.12=he073ed8_16
 tk=8.6.13=noxft_h4845f30_101
 wheel=0.41.3=pyhd8ed1ab_0
