@@ -1,0 +1,17 @@
+antlr4-python3-runtime==4.8
+dataclasses==0.6
+future==0.18.3
+hydra-core==1.0.0
+importlib-resources==6.1.1
+numpy==1.24.4
+omegaconf==2.1.2
+packaging==23.2
+protobuf==4.25.0
+pyyaml==6.0.1
+scipy==1.10.1
+tensorboardx==2.6.2.2
+# Was torch=1.7.0+cu101=pypi_0 in original conda requirements file,
+# but pip does not find 1.7.0+cu101
+torch==1.7.0
+typing-extensions==4.8.0
+zipp==3.17.0
