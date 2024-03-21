@@ -16,11 +16,11 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/rela)
 find_package(Torch REQUIRED)
 
 include_directories(
-  /root/miniconda3/envs/bridge/include
+  $ENV{HOME}/miniconda3/envs/bridge/include
   # spdlog is used by the 'rela' git submodule
   ${CMAKE_CURRENT_SOURCE_DIR}/third_party/spdlog/include
 )
-link_directories(/root/miniconda3/envs/bridge/lib)
+link_directories($ENV{HOME}/miniconda3/envs/bridge/lib)
 
 add_library(bridge_cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/cpp/auction.cc
